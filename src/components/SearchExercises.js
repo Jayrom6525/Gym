@@ -23,8 +23,8 @@ const SearchExercises = ({setExercises, bodyPart, setBodyPart}) => {
       const exercisesData = await fetchData(
       'https://exercisedb.p.rapidapi.com/exercises',
       exerciseOptions);
-      console.log('API response array?', Array.isArray(exercisesData), 'length=', exercisesData.length);
-console.log('first item sample:', exercisesData[0]);
+      console.log('API response array?', Array.isArray(exercisesData), 'length=', exercisesData.length); // API responds with 10 searches?
+      console.log('first item sample:', exercisesData[0]); // presents first exercise in the API list
 
         const searchedExercises = exercisesData.filter(
           (exercise) => exercise.name.toLowerCase().includes(search)
@@ -32,6 +32,7 @@ console.log('first item sample:', exercisesData[0]);
           || exercise.equipment.toLowerCase().includes(search)
           || exercise.bodyPart.toLowerCase().includes(search)
         );
+        console.log(exercisesData); // see whats data on given search.
         
         setSearch('');
         setExercises(searchedExercises);
