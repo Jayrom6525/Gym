@@ -3,6 +3,7 @@ import Pagination from '@mui/material/Pagination';
 import { Box, Stack, Typography } from '@mui/material/';
 
 import { exerciseOptions, fetchData} from '../utils/fetchData';
+import ExerciseImage from './ExerciseImage';
 
 
 
@@ -30,9 +31,7 @@ const Exercises = ({ exercises, setExercises, bodyPart}) => {
             mb: '20px',
             boxShadow: '0 2px 8px rgba(0,0,0,0.1)'
           }}>
-          <img src={exercise.gifUrl} alt={exercise.name} 
-            style={{width: '100%', height: '200px', objectFit: 'cover'}} 
-            loading="lazy" />
+          {/* <ExerciseImage exerciseId={exercise.id} /> */}
           <Typography variant='h5' mt='10px' mb='5px' textTransform='capitalize'>
             {exercise.name}
           </Typography>
